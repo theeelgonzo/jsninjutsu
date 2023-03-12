@@ -97,7 +97,7 @@ const ages = []; */
 
 //loop backwards
 
-const jonasArray = [
+/* const jonasArray = [
     'Jonas',
     'Schmedtmann',
     2037 - 1991,
@@ -109,3 +109,72 @@ for(let i = jonasArray.length - 1; i >=  0; i--){
     console.log(jonasArray[i]);
 }
 
+//loop in a loop, three exercises, five reps each
+
+for(let exercises =1; exercises <= 3; exercises++){
+    console.log(`==============Starting exercise ${exercises}.`)
+    for(let reps = 1; reps <= 5; reps++){
+        console.log(`Rep ${reps} of exercise ${exercises}!`)
+    }
+} */
+
+
+//while loop introduction
+/* let rep = 1;
+while(rep <= 10) {
+    console.log(`Lifting weights repetition ${rep}`);
+    rep++;
+} */
+
+//but we don't NEED a counter....just a condition that remains true...
+
+/* let dice = Math.trunc(Math.random() * 6) + 1;
+//console.log(dice);
+let roll = 0;
+while(dice !== 6){
+    
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    
+    roll++;
+}
+//a little something I came up with to keep track of the total rolls each refresh
+console.log(`It took me ${roll} rolls to get a 6!`);
+ */
+
+//Coding Challenge 4
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+function calcTip(bill) {
+    if(bill >= 50 && bill <= 300){
+        return bill * .15;
+    } else {
+        return bill * .2;
+    }
+}
+
+for(i=0; i < bills.length; i++){
+    tips.push(calcTip(bills[i]));
+    totals.push(bills[i] + tips[i]);
+    console.log(bills[i], tips[i], totals[i]);
+}
+
+
+let sum = 0;
+let num = 0;
+
+function calcAvg(arr){
+    for(i=0; i < arr.length; i++){
+        num = arr[i];
+        sum = sum + num;
+        //console.log(sum);
+    }
+    return sum / arr.length;
+
+}
+
+console.log(calcAvg(tips));
+console.log(calcAvg(totals));
